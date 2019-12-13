@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+html, body, #root, #root>div {
+  height: 100%
+}
+
 html {
   box-sizing: border-box;
 }
