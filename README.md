@@ -1,13 +1,13 @@
 The aim of this project is to use the front-end basics learnt throughout the course to build a pixel art maker.
 
-**The project brief was as follows:**
+**The project Main features:**
 
 + Dynamically set the size of the table as an N by M grid.
 + Choose a color.
 + Click a cell in the grid to fill that cell with the chosen color.
 
 
-### Additional features I successfully implemented:
+### Additional features to implement:
 
 + Color by clicking and by clicking and dragging.
 + Erase on second click, also works with drag.
