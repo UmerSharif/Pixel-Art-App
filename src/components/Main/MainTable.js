@@ -42,7 +42,6 @@ export default function MainTable() {
             name="Tcol"
             min="1"
             max="150"
-            value="10"
             value={col}
             onChange={e => setCol(e.currentTarget.value)}
           />
