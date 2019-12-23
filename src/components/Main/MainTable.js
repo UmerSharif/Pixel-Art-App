@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MainTable.css";
 export default function MainTable() {
+  // useState stuff
+  const [row, setRow] = useState(10);
+  const [col, setCol] = useState(10);
+  // useState stuff
   return (
     <>
       <div className="controls">
@@ -15,7 +19,14 @@ export default function MainTable() {
           <button type="button" value="10">
             +
           </button>
-          <input type="number" name="height" min="1" max="150" value="10" />
+          <input
+            type="number"
+            name="Trow"
+            min="1"
+            max="150"
+            value={row}
+            onChange={e => setRow(e.currentTarget.value)}
+          />
         </label>
 
         <label className="builder">
@@ -26,7 +37,15 @@ export default function MainTable() {
           <button type="button" value="10">
             +
           </button>
-          <input type="number" name="width" min="1" max="150" value="10" />
+          <input
+            type="number"
+            name="Tcol"
+            min="1"
+            max="150"
+            value="10"
+            value={col}
+            onChange={e => setCol(e.currentTarget.value)}
+          />
         </label>
 
         <div className="builder">
