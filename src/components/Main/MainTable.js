@@ -29,13 +29,7 @@ export default function MainTable() {
           Reset
         </button>
         <label className="builder">
-          <div>Row</div>
-          <button type="button" value="10">
-            -
-          </button>
-          <button type="button" value="10">
-            +
-          </button>
+         
           <input
             type="number"
             name="Trow"
@@ -47,13 +41,7 @@ export default function MainTable() {
         </label>
 
         <label className="builder">
-          <div>Column</div>
-          <button type="button" value="10">
-            -
-          </button>
-          <button type="button" value="10">
-            +
-          </button>
+        
           <input
             type="number"
             name="Tcol"
