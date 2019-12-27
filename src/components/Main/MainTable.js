@@ -22,8 +22,12 @@ export default function MainTable() {
     setmouseDown(true);
   };
 
-  const handleMouseStateOnUp = () => {
+  const handleMouseStateEnding = () => {
     setmouseDown(false);
+  };
+
+  const removeCellColor = event => {
+    event.target.style.backgroundColor = "";
   };
 
   const createGrid = () => {
@@ -86,7 +90,12 @@ export default function MainTable() {
         style={{ backgroundColor: background }}
         onMouseDown={handleCellColorOnClick}
         onMouseMove={mouseDown ? handleCellColorOnClick : null}
-        onMouseUp={handleMouseStateOnUp}
+        onMouseUp={handleMouseStateEnding}
+        onMouseLeave={handleMouseStateEnding}
+        onTouchStart={handleCellColorOnClick}
+        onTouchMove={mouseDown ? handleCellColorOnClick : null}
+        onTouchEnd={handleMouseStateEnding}
+        onDoubleClick={removeCellColor}
       ></table>
     </>
   );
