@@ -6,9 +6,24 @@ export default function MainTable() {
   const [row, setRow] = useState(10);
   const [col, setCol] = useState(10);
   const [background, setBackground] = useState("#fff");
+  const [cellColor, setcellColor] = useState("#000");
+  const [mouseDown, setmouseDown] = useState(false);
 
   const handleBackgroundColor = color => {
     setBackground(color.hex);
+  };
+
+  const handleCellColor = color => {
+    setcellColor(color.hex);
+  };
+
+  const handleCellColorOnClick = event => {
+    event.target.style.backgroundColor = cellColor;
+    setmouseDown(true);
+  };
+
+  const handleMouseStateOnUp = () => {
+    setmouseDown(false);
   };
 
   const createGrid = () => {
@@ -64,7 +79,15 @@ export default function MainTable() {
         color={background}
         onChangeComplete={handleBackgroundColor}
       />
-      <table id="pixel-canvas" style={{ backgroundColor: background }}></table>
+      Cell:
+      <SketchPicker color={cellColor} onChangeComplete={handleCellColor} />
+      <table
+        id="pixel-canvas"
+        style={{ backgroundColor: background }}
+        onMouseDown={handleCellColorOnClick}
+        onMouseMove={mouseDown ? handleCellColorOnClick : null}
+        onMouseUp={handleMouseStateOnUp}
+      ></table>
     </>
   );
 }
