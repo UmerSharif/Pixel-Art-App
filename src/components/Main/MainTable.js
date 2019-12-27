@@ -43,6 +43,20 @@ export default function MainTable() {
     }
   };
 
+  const removeGrid = () => {
+    const canvas = document.querySelector("#pixel-canvas");
+    while (canvas.firstChild) {
+      canvas.firstChild.remove();
+    }
+  };
+
+  const handleClearGrid = () => {
+    removeGrid();
+    setBackground("#fff");
+    setcellColor("#000");
+    createGrid();
+  };
+
   // useState stuff
   return (
     <>
@@ -73,9 +87,8 @@ export default function MainTable() {
           <button type="button" onClick={createGrid}>
             Create Grid
           </button>
-          <button type="button">Clear Grid</button>
-          <button type="button" id="reset">
-            Reset
+          <button type="button" onClick={handleClearGrid}>
+            Clear Grid
           </button>
         </div>
       </div>
@@ -83,7 +96,7 @@ export default function MainTable() {
         color={background}
         onChangeComplete={handleBackgroundColor}
       />
-      Cell:
+
       <SketchPicker color={cellColor} onChangeComplete={handleCellColor} />
       <table
         id="pixel-canvas"
