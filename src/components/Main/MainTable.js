@@ -3,6 +3,7 @@ import "./MainTable.css";
 import { SketchPicker } from "react-color";
 export default function MainTable() {
   // useState stuff
+  //TODO: Add reducer pattern
   const [row, setRow] = useState(10);
   const [col, setCol] = useState(10);
   const [background, setBackground] = useState("#fff");
