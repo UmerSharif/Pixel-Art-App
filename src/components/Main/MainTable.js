@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./MainTable.css";
+import "../InputComponent/InputComponent.css";
 import { TwitterPicker } from "react-color";
-import InputComponent from "../InputComponent/InputComponent";
+
 export default function MainTable() {
   // useState stuff
   //TODO: Add reducer pattern
@@ -10,8 +11,6 @@ export default function MainTable() {
   const [background, setBackground] = useState("#fff");
   const [cellColor, setcellColor] = useState("#9B9B9B");
   const [mouseDown, setmouseDown] = useState(false);
-
-  const handleChange = () => {};
 
   const handleBackgroundColor = color => {
     setBackground(color.hex);
@@ -61,6 +60,22 @@ export default function MainTable() {
     createGrid();
   };
 
+  // custom input logic
+  const rowDecrease = () => {
+    setRow(row - 1);
+  };
+  const rowIncrease = () => {
+    setRow(row + 1);
+  };
+
+  const colDecrease = () => {
+    setCol(col - 1);
+  };
+  const colIncrease = () => {
+    setCol(col + 1);
+  };
+  // custom input logic
+
   // useState stuff
   return (
     <>
@@ -76,37 +91,54 @@ export default function MainTable() {
         </div>
       </header>
       <div className="controls__container">
-        <div className="controls_rowcol">
-          {/* <label className="builder">
-            <input
-              type="number"
-              name="Trow"
-              min="1"
-              max="150"
-              value={row}
-              onChange={e => setRow(e.currentTarget.value)}
-            />
-          </label>
-
-          <label className="builder">
-            <input
-              type="number"
-              name="Tcol"
-              min="1"
-              max="150"
-              value={col}
-              onChange={e => setCol(e.currentTarget.value)}
-            />
-          </label> */}
+        <div className="input__controls">
+          <div className="row__inputs">
+            <h4>Rows</h4>
+            <div className="def-number-input number-input">
+              <button onClick={rowDecrease} className="minus"></button>
+              <input
+                className="quantity"
+                name="quantity"
+                value={row}
+                onChange={e => setRow(e.currentTarget.value)}
+                type="number"
+                min="1"
+                max="40"
+              />
+              <button onClick={rowIncrease} className="plus"></button>
+            </div>
+          </div>
+          <div className="col__inputs">
+            <h4>Columns</h4>
+            <div className="def-number-input number-input">
+              <button onClick={colDecrease} className="minus"></button>
+              <input
+                className="quantity"
+                name="quantity"
+                value={col}
+                onChange={e => setCol(e.currentTarget.value)}
+                type="number"
+                min="1"
+                max="40"
+              />
+              <button onClick={colIncrease} className="plus"></button>
+            </div>
+          </div>
         </div>
 
         <div className="controls__buttons">
-          <button type="button" onClick={createGrid}>
+          {/* <button type="button" onClick={createGrid}>
             Create Grid
-          </button>
-          <button type="button" onClick={handleClearGrid}>
+          </button> */}
+          <a className="btn btn3" onClick={createGrid}>
+            Create Grid
+          </a>
+          {/* <button type="button" onClick={handleClearGrid}>
             Clear Grid
-          </button>
+          </button> */}
+          <a className="btn btn4" onClick={handleClearGrid}>
+            Clear Grid
+          </a>
         </div>
       </div>
       <div className="grid__colorpickers">
@@ -144,7 +176,6 @@ export default function MainTable() {
           </div>
         </div>
       </div>
-      <InputComponent row={row} col={col} onChange={handleChange} />
     </>
   );
 }
