@@ -7,19 +7,40 @@
   box-sizing: border-box;
 }
 
+/* height */
+
 /* html,
 body {
   width: 100vw;
   height: 100vh;
 } */
 
-html {
+/* html {
   height: 100%;
 }
 body {
   min-height: 100%;
+} */
+
+html {
+  height: 100%;
 }
 
+body {
+  height: 100%;
+}
+
+div#root {
+  height: 100%; /* remove this line to see div.app is no more 100% height */
+  background-color: indigo;
+}
+
+div.App {
+  min-height: 100%;
+  background-color: cornsilk;
+}
+
+/* height ends */
 html {
   box-sizing: border-box;
 }
