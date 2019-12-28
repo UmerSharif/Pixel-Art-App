@@ -6,8 +6,8 @@ import { TwitterPicker } from "react-color";
 export default function MainTable() {
   // useState stuff
   //TODO: Add reducer pattern
-  const [row, setRow] = useState(10);
-  const [col, setCol] = useState(10);
+  const [row, setRow] = useState(15);
+  const [col, setCol] = useState(15);
   const [background, setBackground] = useState("#fff");
   const [cellColor, setcellColor] = useState("#9B9B9B");
   const [mouseDown, setmouseDown] = useState(false);
@@ -127,15 +127,10 @@ export default function MainTable() {
         </div>
 
         <div className="controls__buttons">
-          {/* <button type="button" onClick={createGrid}>
-            Create Grid
-          </button> */}
           <a className="btn btn3" onClick={createGrid}>
             Create Grid
           </a>
-          {/* <button type="button" onClick={handleClearGrid}>
-            Clear Grid
-          </button> */}
+
           <a className="btn btn4" onClick={handleClearGrid}>
             Clear Grid
           </a>
