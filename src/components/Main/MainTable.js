@@ -35,6 +35,8 @@ export default function MainTable() {
 
   const createGrid = () => {
     const canvas = document.querySelector("#pixel-canvas");
+    setBackground("#fff");
+    setcellColor("#9B9B9B");
     canvas.innerHTML = "";
     for (let i = 1; i <= row; i++) {
       const tr = document.createElement("tr");
@@ -57,7 +59,6 @@ export default function MainTable() {
     removeGrid();
     setBackground("#fff");
     setcellColor("#9B9B9B");
-    createGrid();
   };
 
   // custom input logic
