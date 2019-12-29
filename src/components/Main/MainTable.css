@@ -115,6 +115,7 @@ header .overlay {
 
 .btn3:hover {
   color: beige;
+  cursor: pointer;
 }
 
 .btn4::before {
@@ -128,4 +129,5 @@ header .overlay {
 
 .btn4:hover {
   color: beige;
+  cursor: pointer;
 }
