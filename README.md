@@ -1,4 +1,4 @@
-The aim of this project is to use the front-end basics learnt throughout the course to build a pixel art maker.
+The aim of this project is to use Frontend framewor React to gain deep knowledge of its working.
 
 **The project Main features:**
 
